@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/peromaric/solidity_practice/issues"
   },
-  "homepage": "https://github.com/peromaric/solidity_practice#readme"
+  "homepage": "https://github.com/peromaric/solidity_practice#readme",
+  "dependencies": {
+    "solc": "^0.7.1"
+  }
 }
