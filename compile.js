@@ -18,7 +18,7 @@ const source = fs.readFileSync(practicePath, 'utf8');
 var input = {
   language: 'Solidity',
   sources: {
-      'hello.sol' : {
+      'practice.sol' : {
           content: source
       }
   },
@@ -30,4 +30,6 @@ var input = {
       }
   }
 }; 
-console.log(JSON.parse(solc.compile(JSON.stringify(input))));
+
+module.exports = JSON.parse(solc.compile(JSON.stringify(input)));
+
