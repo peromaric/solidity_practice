@@ -26,7 +26,10 @@ solc.loadRemoteVersion('latest', function(err, solcSnapshot) {
   }
 });
 
-There's another issue, however. When having node modules installed, VS studio extension
-automatically ignores set global solidity version and uses the version from the modules.
+Except for that, turns out I have to change a couple of other things - compile.js should use different
+syntax. Not going to follow the tutorial exactly how it's layed out, I'll just use the latest
+versions!
+
+
 
 

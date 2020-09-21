@@ -14,12 +14,20 @@ const solc = require('solc');
 
 const practicePath = path.resolve(__dirname, 'contracts', 'practice.sol');
 const source = fs.readFileSync(practicePath, 'utf8');
-solc.loadRemoteVersion('v0.4.17+commit.bdeb9e52', function(err, solcSnapshot) {
-    if (err) {
-      console.log('Error occured!')
-    } else {
-        solcSnapshot.compile(source, 1); //code + number of contracts to compile
 
-        console.log(solcSnapshot.compile(source, 1));
-    }
-  });
+var input = {
+  language: 'Solidity',
+  sources: {
+      'hello.sol' : {
+          content: source
+      }
+  },
+  settings: {
+      outputSelection: {
+          '*': {
+              '*': [ '*' ]
+          }
+      }
+  }
+}; 
+console.log(JSON.parse(solc.compile(JSON.stringify(input))));
