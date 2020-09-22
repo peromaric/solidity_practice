@@ -25,11 +25,12 @@ var input = {
   settings: {
       outputSelection: {
           '*': {
-              '*': [ '*' ]
+              '*': [ 'abi', 'evm.bytecode' ]
           }
       }
   }
 }; 
 
-module.exports = JSON.parse(solc.compile(JSON.stringify(input)));
+var output = JSON.parse(solc.compile(JSON.stringify(input)));
 
+module.exports = output.contracts['practice.sol']['Inbox'];
