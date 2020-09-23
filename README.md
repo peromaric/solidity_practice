@@ -17,7 +17,14 @@ Also created a compile.js which will be used to compile the solidity code. Not u
 that supplied in the VS extension for solidity, I have it installed for linting.
 There's an issue with solidity + node modules. The tutorial I'm using uses 0.4.17. - trying to
 somehow compile with that version. 
+It needs these lines of code:
+const path = require('path');   //file path
+const fs = require('fs');       //source
+const solc = require('solc');   //solidity module
 
+
+const practicePath = path.resolve(__dirname, 'contracts', 'practice.sol');
+const source = fs.readFileSync(practicePath, 'utf8');
 Using my version instead of 'latest', "v0.4.17+commit.bdeb9e52":
 
 solc.loadRemoteVersion('latest', function(err, solcSnapshot) {
@@ -53,3 +60,14 @@ beforeEach( async() => {                          //async + await, better than p
   //use one of those accounts to deploy
   //the contract
 });
+
+5) Attempting to connect to a test network using infura api, need to install truffle hd wallet provider
+
+Additional comments:
+npm install --save truffle-hdwallet-provider
+Deprecated, going forward with it. constructor for HDwalletprovider takes two arguments,
+acc mnemonic and url of what network to connect to - infura network ropsten link
+
+6) CONTRACT DEPLOYED SUCESSFULLY! 
+Link: https://ropsten.etherscan.io/address/0x23C80234102febDdCbf2d70A3DD676ff50ba0837
+

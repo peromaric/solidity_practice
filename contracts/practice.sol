@@ -9,7 +9,7 @@ contract Inbox{
         message = "Hello!";
     }
 
-    function set_message(string memory newMessage) public{
+    function setMessage(string memory newMessage) public{
         message = newMessage;
     }
 }
